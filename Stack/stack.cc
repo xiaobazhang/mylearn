@@ -15,7 +15,7 @@ void function2(int a) {
 	int ret = function1(first, second);
 }
 
-void main(void) {
+int main(void) {
 	int tmp = 1;
 	int ret = function2(tmp);
 	return 0;
