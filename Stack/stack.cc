@@ -17,6 +17,6 @@ void function2(int a) {
 
 int main(void) {
 	int tmp = 1;
-	int ret = function2(tmp);
+	function2(tmp);
 	return 0;
 }
