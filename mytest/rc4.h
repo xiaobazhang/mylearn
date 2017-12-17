@@ -4,6 +4,8 @@
 
 #ifndef MYLEARN_RC4_H
 #define MYLEARN_RC4_H
+#include <iostream>
+#include <stdio.h>
 
 class RC4 {
  public:
