@@ -1,0 +1,13 @@
+import glob
+# SConstruct
+env = Environment()      
+
+env["CPPPATH"] = [ '/usr/local/include/openssl/' ]
+env['LIBPATH'] = [ '/usr/local/openssl/lib' ]
+
+env['CPPDEFINES'] = ['LINUX', '_DEBUG' ]
+env['CCFLAGS'] = '-g -std=gnu99'
+env['LIBS'] = [ 'm', 'crypto', 'dl' ]
+
+env.Program( target = "./test_aes", source = ( glob.glob( './*.c' ) ) )
+
