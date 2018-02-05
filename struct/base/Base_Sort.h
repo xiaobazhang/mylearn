@@ -15,7 +15,12 @@ class Base_Sort {
 	Base_Sort(T &begin, T &end);
 
  private:
-	bool quick_sort(T &begin, T &end);
+	bool quick_sort(T &begin, T &end, Compare compare) {
+		if (begin == end) {
+			return true;
+		}
+
+	}
 
 };
 }

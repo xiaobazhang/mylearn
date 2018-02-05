@@ -66,6 +66,12 @@ class List_Iterator {
 		operator--();
 		return tmp;
 	}
+	bool swap(self &a, self &b) {
+		T c = a.node->value;
+		a.node->value = b.node->value;
+		b.node->value = c;
+		return true;
+	}
 
  private:
 	__node *node;
