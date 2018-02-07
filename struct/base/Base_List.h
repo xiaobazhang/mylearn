@@ -92,9 +92,12 @@ class List {
 	}
 	~List() {
 		Node<T> *tmp = head;
-		while (tmp != NULL) {
+		while (tmp) {
 			delete tmp;
 			tmp = tmp->next;
+			if (tmp == head) {
+				break;
+			}
 		}
 	}
 	bool push_back(const T &value) {
@@ -183,14 +186,41 @@ class List {
 	}
 	bool clear() {
 		Node<T> *tmp = head;
-		while (tmp != NULL) {
+		while (tmp) {
 			delete tmp;
 			tmp = tmp->next;
+			if (tmp == head) {
+				break;
+			}
 		}
 		head = NULL;
 		len = 0;
 		return true;
 	}
+	void pri() {
+		Node<T> *tmp = head->next;
+		while (tmp != head) {
+			std::cout << "pri value=" << tmp->value << std::endl;
+			tmp = tmp->pre;
+		}
+	}
+	bool reverse() {
+		Node<T> *h = head;
+		Node<T> *t = head->pre;
+		head = head->pre;
+		while (h) {
+			Node<T> *n = h->next;
+			h->next = h->pre;
+			h->pre = n;
+			std::cout << "reverse=" << h->value << std::endl;
+			if (h == t) {
+				break;
+			}
+			h = n;
+		}
+		return true;
+	}
+
 	T operator[](int index) {
 		if (index < 0) {
 			T tmp;

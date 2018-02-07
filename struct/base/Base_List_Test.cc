@@ -17,10 +17,14 @@ int main(void) {
 	for (int i = 0; i < test.size(); i++) {
 		printf("value=%d\n", test[i]);
 	}
-
-	List<int>::iterator iter = test.begin();
+	test.reverse();
+	test.pri();
+	/*List<int>::iterator iter = test.begin();
 	for (; iter != test.end(); iter++) {
 		printf("iter value=%d\n", *iter);
+	}*/
+	for (int i = 0; i < test.size(); i++) {
+		printf("invert value=%d\n", test[i]);
 	}
 	test.clear();
 	printf("size = %d\n", test.size());
